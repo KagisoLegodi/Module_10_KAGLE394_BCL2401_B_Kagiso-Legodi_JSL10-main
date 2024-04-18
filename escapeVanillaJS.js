@@ -17,7 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🪲 Bug: What's mssing from JS concepts?
     const reactConcepts = new Set(["components", "jsx", "hooks", "async"]);
     // 🪲 Bug: Incorrect function call
-    const commonConcepts = findIntersection(jsConcepts, reactConcepts, commonConcepts);
+    const commonConcepts = findIntersection(
+      jsConcepts,
+      reactConcepts,
+      commonConcepts
+    );
     document.getElementById(
       "room2Result"
     ).textContent = `The code to unlock the door is: ${Array.from(
@@ -42,10 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function findMostRecentBook(books) {
   // 🪲 Bug fix: Logic error
-  return books.reduce((mostRecent, book) =>
-    new Date(book.published) > new Date(mostRecent.published)
-      ? book
-      : mostRecent
+  return books.reduce(
+    (mostRecent, book) =>
+      new Date(book.published) > new Date(mostRecent.published)
+        ? book
+        : mostRecent,
+    books[0]
   );
 }
 
