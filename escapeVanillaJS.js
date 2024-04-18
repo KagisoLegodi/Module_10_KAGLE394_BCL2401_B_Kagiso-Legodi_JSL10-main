@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 🪲 Bug: Incorrect ID used for attaching the event listener
   document.getElementById("solveRoom1").addEventListener("click", () => {
-    fetch("books.json")
-      .then((response) => response.json())
-      .then((books) => {
+    fetch('books.json')
+      .then(response => response.json())
+      .then(books => {
         const mostRecentBook = findMostRecentBook(books);
         // 🪲 Bug: Incorrect element ID
         document.getElementById(
