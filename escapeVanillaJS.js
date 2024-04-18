@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       .then((message) => {
         // 🪲 Bug: Incorrect method
-        document.getElementById("room3Result").textContent = message;
+        document.getElementById("room3Result").innerText = message;
       });
   });
 });
