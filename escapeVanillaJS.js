@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function findMostRecentBook(books) {
-  // 🪲 Bug: Logic error
+  // 🪲 Bug fix: Logic error
   return books.reduce((mostRecent, book) =>
     new Date(book.published) > new Date(mostRecent.published)
       ? book
@@ -48,9 +48,8 @@ function findMostRecentBook(books) {
 }
 
 function findIntersection(setA, setB) {
-  // 🪲 Bug: Incorrect logic
-  const intersection = new Set([...setA]);
-  return intersection;
+  // 🪲 Bug fix: Ccorrect logic
+  return new Set([...setA].filter((x) => setB.has(x)));
 }
 
 async function navigateLabyrinth(directions) {
